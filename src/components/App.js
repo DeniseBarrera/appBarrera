@@ -1,19 +1,20 @@
 
 import {useState} from "react"
 import Header from "./NavBar";
-import Footer from "./ItemListContainer";
+import ItemListContainer from "./ItemListContainer";
 import Main from "./Main";
 import ItemCount from "./ItemCount";
+import NavBar from "./NavBar";
 
 
 const App = () => {
     
     
     
-     const resultado = useState(0)
-     let contador = resultado[0]
-     const setContador = resultado[1]
-     console.log(resultado)
+     //const resultado = useState(0)
+     //let contador = resultado[0]
+     //const setContador = resultado[1]
+     //console.log(resultado)
     
 
     //let contador = 0
@@ -22,12 +23,16 @@ const App = () => {
 
     
     return (
-        <>
-            <Header contador={contador}/>
-            <Main uno={true} dos={1} tres={"Denise"}/>
-            <ItemCount/>
-            <Footer contador={contador} test={true} nombre="Denise"/>
-        </>
+        // <>
+        //     <Header contador={contador}/>
+        //     <Main uno={true} dos={1} tres={"Denise"}/>
+        //     <ItemCount/>
+        //     <Footer contador={contador} test={true} nombre="Denise"/>
+        // </>
+        <div className="App">
+            <NavBar/>
+           <ItemListContainer greeting="Hola!"/>
+        </div>
     )
 }
 

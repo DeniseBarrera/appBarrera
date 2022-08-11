@@ -1,16 +1,32 @@
 import React from 'react'
-import Nav from "./Nav";
-import ItemCount from './ItemCount';
+import { customFetch } from '../assets/customFetch'
+import { useState, useEffect } from 'react'
+import { products } from '../assets/productos'
+import { ItemCount } from './ItemCount'
+import ItemList from './ItemList'
 
-const Footer = ({contador,nombre}) => {
-    return (
-        <footer>
-            <p>Hola {nombre}</p>
-            <p>El contador va: {contador} </p>
-            
-            <Nav type="footer"/>
-        </footer>
-    )
+const ItemListContainer = ({ greeting }) => {
+
+    const [listProducts, setListProducts] = useState([])
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        customFetch(products)
+            .then(data => {
+                setLoading(true)
+                setListProducts(data)
+            })
+    }, [])
+
+
+
+return (
+    <>
+        <div>Hola!!</div>
+        {!loading && <spinner/>}
+        {loading && <ItemList listProducts={listProducts} />}
+    </>
+)
 }
 
-export default Footer
+export default ItemListContainer

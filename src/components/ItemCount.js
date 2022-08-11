@@ -1,9 +1,30 @@
-import {useState} from "react"
+import {useState , useEffect} from "react"
 import React from 'react'
 import App from "./App"
 
 const ItemCount = ({aumentar, resetear, disminuir}) => {
+
+    const [titulo, setTitulo] = useState("Cargando..")
     const [contador, setContador] = useState(0)
+    const [confirmed,setConfirmed] = useState(false)
+    console.log("se crea el estado")
+
+    useEffect(()=>{
+        setTitulo("Cargando...")
+
+        const simulacroPedido = new Promise((res,rej)=>{
+            setTimeout(() => {
+                res("OK")
+            }, 2000)
+        })
+        
+        simulacroPedido.then((resultado)=>{
+            console.log({resultado})
+        })
+        simulacroPedido.catch((error)=>{})
+    }, [confirmed])
+
+    console.log("Render")
 
     const aumentarContador = () => {
         console.log("aumentarContador")
@@ -21,11 +42,15 @@ const ItemCount = ({aumentar, resetear, disminuir}) => {
         setContador(contador - 1)
     }
 
+    //const confirmar = () => {}
+        //setConfirmed(!confirmed)
+
     return (
     <>
-    <div>compra</div>
     
     <main>
+       
+        <p id="parrafo">El Contador va: {contador}</p>
         <button onClick={aumentarContador}>Aumenta</button>
         <button onClick={resetearContador}>Reset</button>
         <button onClick={reducirContador}>Disminuye</button>
