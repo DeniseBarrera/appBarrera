@@ -5,9 +5,9 @@ const Nav = (parametros) => {
     if(parametros.type == "header"){
         return (
             <nav>
-                <a href="#">link-header</a>
-                <a href="#">link-header</a>
-                <a href="#">link-header</a>
+                <a href="#">Productos</a>
+                <a href="#">Quienes somos</a>
+                <a href="#">Contacto</a>
             </nav>
         )
     }else{

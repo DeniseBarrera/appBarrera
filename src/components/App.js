@@ -5,6 +5,7 @@ import ItemListContainer from "./ItemListContainer";
 import Main from "./Main";
 import ItemCount from "./ItemCount";
 import NavBar from "./NavBar";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
         <div className="App">
             <NavBar/>
            <ItemListContainer greeting="Hola!"/>
+           <ItemDetailContainer/>
         </div>
     )
 }
