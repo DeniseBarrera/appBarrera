@@ -1,62 +1,27 @@
-import {useState , useEffect} from "react"
 import React from 'react'
+import {useState , useEffect} from "react"
+import { HStack, Button, Text } from '@chakra-ui/react'
 import App from "./App"
 
-const ItemCount = ({aumentar, resetear, disminuir}) => {
+const ItemCount = ({ initial, stock, onAdd }) => {
 
-    const [titulo, setTitulo] = useState("Cargando..")
-    const [contador, setContador] = useState(0)
-    const [confirmed,setConfirmed] = useState(false)
-    console.log("se crea el estado")
-
-    useEffect(()=>{
-        setTitulo("Cargando...")
-
-        const simulacroPedido = new Promise((res,rej)=>{
-            setTimeout(() => {
-                res("OK")
-            }, 2000)
-        })
-        
-        simulacroPedido.then((resultado)=>{
-            console.log({resultado})
-        })
-        simulacroPedido.catch((error)=>{})
-    }, [confirmed])
-
-    console.log("Render")
-
-    const aumentarContador = () => {
-        console.log("aumentarContador")
-        //if(contador>5){
-        setContador(contador + 1)
-       // }
-    }
-
-    const resetearContador = () => {
-        console.log("resetearContador")
-        setContador(0)
-    }
-    const reducirContador = () => {
-        console.log("disminuirContador")
-        setContador(contador - 1)
-    }
-
-    //const confirmar = () => {}
-        //setConfirmed(!confirmed)
+    const [count, setCount] = useState(initial)
+    
+    const increase = () => count < stock && setCount(count + 1)
+    const decrease = () => count > initial && setCount(count - 1)
 
     return (
-    <>
+
     
-    <main>
-       
-        <p id="parrafo">El Contador va: {contador}</p>
-        <button onClick={aumentarContador}>Aumenta</button>
-        <button onClick={resetearContador}>Reset</button>
-        <button onClick={reducirContador}>Disminuye</button>
-    </main>
+    <HStack>
     
-    </>
+        <Button variant='ghost' colorScheme='green' size='sm'onClick={decrease}>-</Button>
+        <Text>{count}</Text>
+        <Button variant='ghost' colorScheme='green' size='sm' onClick={increase}>+</Button>
+        <Button colorScheme='green' size='sm'>Agregar</Button>
+    </HStack>
+    
+    
     )
 }
 

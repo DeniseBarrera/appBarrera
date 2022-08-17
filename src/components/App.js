@@ -1,14 +1,14 @@
 
+import { ChakraProvider, Heading } from "@chakra-ui/react";
 import {useState} from "react"
-import Header from "./NavBar";
 import ItemListContainer from "./ItemListContainer";
-import Main from "./Main";
 import ItemCount from "./ItemCount";
 import NavBar from "./NavBar";
 import ItemDetailContainer from "./ItemDetailContainer";
+import { BrowserRouter, Routes, Route }  from "react-router-dom";
 
 
-const App = () => {
+function App() {
     
     
     
@@ -30,12 +30,17 @@ const App = () => {
         //     <ItemCount/>
         //     <Footer contador={contador} test={true} nombre="Denise"/>
         // </>
-        <div className="App">
-            <NavBar/>
-           <ItemListContainer greeting="Hola!"/>
-           <ItemDetailContainer/>
-        </div>
+        <ChakraProvider>
+            <BrowserRouter>
+                <NavBar/>
+                    <Routes>
+                        <Route path="/" element={<ItemListContainer greeting="Bienvenidos a tienda Mía!" />} />
+                        <Route path="/category/:category" element={<ItemListContainer greeting="Bienvenidos a tienda Mía!"/>}/>
+                        <Route path="/product/:id" element={<temDetailContainer/>} />
+                    </Routes>
+            </BrowserRouter>
+        </ChakraProvider>
     )
 }
 
-export default App;
+export default App
