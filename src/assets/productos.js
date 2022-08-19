@@ -6,7 +6,12 @@ export const products = [
         category: "Aros",
         description: "Aro solitario de plata 925 en forma de argolla de 9mm con bolitas",
         price: 1100,
-        stock: 3
+        stock: 3,
+        initial: 1,
+        config: {
+            size: ['s', 'm', 'l'],
+            material: ['Plata 925', 'Acero quirurgico']
+        }
     },
     {
         id: 2, 
@@ -15,7 +20,12 @@ export const products = [
         category: "Aros",
         description: "Aros de plata 925 en forma de argolla bolita de 1mm",
         price: 1000,
-        stock: 5
+        stock: 5,
+        initial: 1,
+        config: {
+            size: ['s', 'm', 'l'],
+            material: ['Plata 925', 'Acero quirurgico']
+        }
     },
     {
         id: 3, 
@@ -24,7 +34,12 @@ export const products = [
         category: "Pulseras",
         description: "Pulsera de plata 925 con ojo azul",
         price: 1700,
-        stock: 4
+        stock: 4,
+        initial: 1,
+        config: {
+            size: ['s', 'm', 'l'],
+            material: ['Plata 925', 'Acero quirurgico']
+        }
     },
     {
         id: 4, 
@@ -33,6 +48,11 @@ export const products = [
         category: "Pulseras",
         description: "Pulsera de plata 925 con bolitas de 3mm en sus puntas",
         price: 2100,
-        stock: 3
+        stock: 3,
+        initial: 1,
+        config: {
+            size: ['s', 'm', 'l'],
+            material: ['Plata 925', 'Acero quirurgico']
+        }
     }
 ]

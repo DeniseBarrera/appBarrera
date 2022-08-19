@@ -26,4 +26,4 @@ const ItemDetailContainer = () => {
     )
 }
 
-export { ItemDetailContainer }
+export default ItemDetailContainer 

@@ -4,7 +4,8 @@ import {useState} from "react"
 import ItemListContainer from "./ItemListContainer";
 import ItemCount from "./ItemCount";
 import NavBar from "./NavBar";
-import ItemDetailContainer from "./ItemDetailContainer";
+import  Cart  from "./Cart"
+import ItemDetailContainer from "./ItemDetailContainer"
 import { BrowserRouter, Routes, Route }  from "react-router-dom";
 
 
@@ -36,7 +37,8 @@ function App() {
                     <Routes>
                         <Route path="/" element={<ItemListContainer greeting="Bienvenidos a tienda Mía!" />} />
                         <Route path="/category/:category" element={<ItemListContainer greeting="Bienvenidos a tienda Mía!"/>}/>
-                        <Route path="/product/:id" element={<temDetailContainer/>} />
+                        <Route path="/product/:id" element={<ItemDetailContainer/>} />
+                        <Route path="/cart" element={<Cart />}/>
                     </Routes>
             </BrowserRouter>
         </ChakraProvider>
