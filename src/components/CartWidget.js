@@ -1,15 +1,15 @@
 import React from 'react'
-import { GiBalloonDog } from "react-icons/gi";
+import { FaShoppingCart } from "react-icons/fa";
 import  NavBar from './NavBar'
 import { NavLink } from 'react-router-dom'
 
 const CartWidget = () => {
   return (
     <>
-    <GiBalloonDog/>
+    <FaShoppingCart/>
     </>
     /*<NavLink to="/cart">
-      <FaShoppingCart/>
+      <GiBalloonDog/>
     </NavLink>*/
   )
 }
